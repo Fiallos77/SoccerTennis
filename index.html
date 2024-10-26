@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Campeonato Soccer-Tennis</title>
+    <title>Soccer-Tennis Championship Registration</title>
     <style>
         body {
-            background-image: url('https://passionsoccer.ca/cdn/shop/products/16B7-kwik-goal-mini-soccer-tennis_1000x.jpg?v=1616440431'); /* Reemplaza con la URL de tu imagen de fondo */
+            background-image: url('https://passionsoccer.ca/cdn/shop/products/16B7-kwik-goal-mini-soccer-tennis_1000x.jpg?v=1616440431your-soccer-background-image.jpg'); /* Replace with the URL of your background image */
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -18,7 +18,7 @@
         }
 
         .form-container {
-            background: rgba(0, 0, 0, 0.7); /* Fondo oscuro con transparencia */
+            background: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
@@ -52,7 +52,7 @@
         button {
             width: 100%;
             padding: 10px;
-            background: #28a745; /* Color verde */
+            background: #28a745; /* Green color */
             border: none;
             border-radius: 5px;
             color: #fff;
@@ -63,41 +63,34 @@
         }
 
         button:hover {
-            background: #218838; /* Color verde más oscuro al pasar el mouse */
+            background: #218838; /* Darker green on hover */
         }
     </style>
 </head>
 <body>
     <div class="form-container">
-        <h1>Registro</h1>
+        <h1>Registration</h1>
         <form name="registration" method="POST" action="/thank-you.html" data-netlify="true">
-            <label for="team-name">Nombre del equipo:</label>
+            <label for="team-name">Team Name:</label>
             <input type="text" id="team-name" name="team-name" required>
 
-            <label for="player1-name">Nombre del jugador 1:</label>
+            <label for="player1-name">Player 1 Full Name:</label>
             <input type="text" id="player1-name" name="player1-name" required>
 
-            <label for="player1-surname">Apellido del jugador 1:</label>
-            <input type="text" id="player1-surname" name="player1-surname" required>
-
-            <label for="player2-name">Nombre del jugador 2:</label>
+            <label for="player2-name">Player 2 Full Name:</label>
             <input type="text" id="player2-name" name="player2-name" required>
 
-            <label for="player2-surname">Apellido del jugador 2:</label>
-            <input type="text" id="player2-surname" name="player2-surname" required>
-
-            <label for="email">Correo electrónico:</label>
+            <label for="email">Email Address:</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="phone">Número de teléfono:</label>
+            <label for="phone">Phone Number:</label>
             <input type="tel" id="phone" name="phone" required>
 
-            <button type="submit">Registrar</button>
+            <button type="submit">Register</button>
         </form>
     </div>
 </body>
 </html>
-
 
 
 
