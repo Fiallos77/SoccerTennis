@@ -89,7 +89,7 @@
 
     <div class="form-container" id="formContainer">
         <h1>Registration</h1>
-        <form id="registrationForm">
+        <form id="registrationForm" method="POST" action="/" data-netlify="true">
             <label for="team-name">Team Name:</label>
             <input type="text" id="team-name" name="team-name" required>
 
@@ -125,6 +125,25 @@
             event.preventDefault(); // Prevent the default form submission
             document.getElementById('formContainer').style.display = 'none'; // Hide the form
             document.getElementById('thankYouContainer').style.display = 'block'; // Show the thank you message
+            
+            // Here, submit the form using fetch to keep it on the same page
+            const formData = new FormData(this);
+            fetch(this.action, {
+                method: this.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Handle successful submission
+                } else {
+                    // Handle errors
+                    alert("Error in submission.");
+                }
+            })
+            .catch(error => alert("Error in submission: " + error));
         });
 
         // Function to go back to the registration form
