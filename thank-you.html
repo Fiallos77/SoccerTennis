@@ -1,13 +1,65 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gracias por Registrarte</title>
+    <title>Thank You!</title>
+    <style>
+        body {
+            background-image: url('https://media.gettyimages.com/id/539487382/es/v%C3%ADdeo/vista-de-%C3%A1ngulo-bajo-patada-de-jugador-de-f%C3%BAtbol.jpg?s=640x640&k=20&c=sX-B7UXzR0r_cpyjQ_59D9iJ18S5tHGOM8mciBuWrOQ='); /* Replace with your background image URL */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        .thank-you-container {
+            background: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007bff; /* Blue color */
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .back-button:hover {
+            background: #0056b3; /* Darker blue on hover */
+        }
+    </style>
 </head>
 <body>
-    <h1>¡Gracias por registrarte!</h1>
-    <p>Hemos recibido tus datos para el campeonato de soccer-tennis.</p>
-    <a href="index.html">Volver al inicio</a>
+    <div class="thank-you-container">
+        <h1>Thank You!</h1>
+        <p>Your registration has been received successfully.</p>
+        <p>We appreciate your participation in the Soccer-Tennis Championship!</p>
+        <a href="/" class="back-button">Go Back</a>
+    </div>
 </body>
 </html>
