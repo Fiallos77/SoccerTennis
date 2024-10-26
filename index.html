@@ -6,7 +6,7 @@
     <title>Soccer-Tennis Championship Registration</title>
     <style>
         body {
-            background-image: url('https://passionsoccer.ca/cdn/shop/products/16B7-kwik-goal-mini-soccer-tennis_1000x.jpg?v=1616440431your-soccer-background-image.jpg'); /* Replace with the URL of your background image */
+            background-image: url('https://passionsoccer.ca/cdn/shop/products/16B7-kwik-goal-mini-soccer-tennis_1000x.jpg?v=1616440431'); /* Background image for registration */
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -15,19 +15,20 @@
             margin: 0;
             font-family: Arial, sans-serif;
             color: #fff;
+            text-align: center;
         }
 
-        .form-container {
+        .form-container, .thank-you-container {
             background: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             max-width: 400px;
             width: 100%;
+            display: none; /* Initially hide the thank you message */
         }
 
         h1 {
-            text-align: center;
             margin-bottom: 20px;
         }
 
@@ -65,12 +66,30 @@
         button:hover {
             background: #218838; /* Darker green on hover */
         }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007bff; /* Blue color */
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .back-button:hover {
+            background: #0056b3; /* Darker blue on hover */
+        }
     </style>
 </head>
 <body>
-    <div class="form-container">
+
+    <div class="form-container" id="formContainer">
         <h1>Registration</h1>
-        <form name="registration" method="POST" action="/thank-you.html" data-netlify="true">
+        <form id="registrationForm">
             <label for="team-name">Team Name:</label>
             <input type="text" id="team-name" name="team-name" required>
 
@@ -89,9 +108,34 @@
             <button type="submit">Register</button>
         </form>
     </div>
+
+    <div class="thank-you-container" id="thankYouContainer">
+        <h1>Thank You!</h1>
+        <p>Your registration has been received successfully.</p>
+        <p>We appreciate your participation in the Soccer-Tennis Championship!</p>
+        <a href="#" class="back-button" onclick="goBack()">Go Back</a>
+    </div>
+
+    <script>
+        // Show the registration form when the page loads
+        document.getElementById('formContainer').style.display = 'block';
+
+        // Handle form submission
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            document.getElementById('formContainer').style.display = 'none'; // Hide the form
+            document.getElementById('thankYouContainer').style.display = 'block'; // Show the thank you message
+        });
+
+        // Function to go back to the registration form
+        function goBack() {
+            document.getElementById('thankYouContainer').style.display = 'none'; // Hide thank you message
+            document.getElementById('formContainer').style.display = 'block'; // Show the registration form again
+
+            // Clear all input fields
+            document.getElementById('registrationForm').reset();
+        }
+    </script>
+
 </body>
 </html>
-
-
-
-
