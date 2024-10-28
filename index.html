@@ -6,7 +6,7 @@
     <title>Soccer-Tennis Championship Registration</title>
     <style>
         body {
-            background-image: url('https://passionsoccer.ca/cdn/shop/products/16B7-kwik-goal-mini-soccer-tennis_1000x.jpg?v=1616440431'); /* Background image for registration */
+            background-image: url('https://passionsoccer.ca/cdn/shop/products/16B7-kwik-goal-mini-soccer-tennis_1000x.jpg?v=1616440431your-soccer-background-image.jpg');
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -15,20 +15,19 @@
             margin: 0;
             font-family: Arial, sans-serif;
             color: #fff;
-            text-align: center;
         }
 
-        .form-container, .thank-you-container {
-            background: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+        .form-container {
+            background: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             max-width: 400px;
             width: 100%;
-            display: none; /* Initially hide the thank you message */
         }
 
         h1 {
+            text-align: center;
             margin-bottom: 20px;
         }
 
@@ -53,7 +52,7 @@
         button {
             width: 100%;
             padding: 10px;
-            background: #28a745; /* Green color */
+            background: #28a745;
             border: none;
             border-radius: 5px;
             color: #fff;
@@ -64,32 +63,25 @@
         }
 
         button:hover {
-            background: #218838; /* Darker green on hover */
+            background: #218838;
         }
 
-        .back-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #007bff; /* Blue color */
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            font-size: 16px;
-            text-decoration: none;
-            margin-top: 15px;
-            transition: background 0.3s;
-        }
-
-        .back-button:hover {
-            background: #0056b3; /* Darker blue on hover */
+        .thank-you-container {
+            display: none;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-
-    <div class="form-container" id="formContainer">
+    <div class="form-container">
         <h1>Registration</h1>
-        <form id="registrationForm" method="POST" action="/" data-netlify="true">
+        <form name="registration" method="POST" data-netlify="true" onsubmit="showThankYou(event)">
             <label for="team-name">Team Name:</label>
             <input type="text" id="team-name" name="team-name" required>
 
@@ -98,6 +90,9 @@
 
             <label for="player2-name">Player 2 Full Name:</label>
             <input type="text" id="player2-name" name="player2-name" required>
+
+            <label for="player3-name">Player 3 Full Name:</label>
+            <input type="text" id="player3-name" name="player3-name" required>
 
             <label for="email">Email Address:</label>
             <input type="email" id="email" name="email" required>
@@ -109,52 +104,25 @@
         </form>
     </div>
 
-    <div class="thank-you-container" id="thankYouContainer">
+    <div class="thank-you-container" id="thank-you-message">
         <h1>Thank You!</h1>
         <p>Your registration has been received successfully.</p>
         <p>We appreciate your participation in the Soccer-Tennis Championship!</p>
-        <a href="#" class="back-button" onclick="goBack()">Go Back</a>
+        <button onclick="goBack()">Go Back</button>
     </div>
 
     <script>
-        // Show the registration form when the page loads
-        document.getElementById('formContainer').style.display = 'block';
+        function showThankYou(event) {
+            event.preventDefault();
+            document.querySelector('.form-container').style.display = 'none';
+            document.getElementById('thank-you-message').style.display = 'block';
+        }
 
-        // Handle form submission
-        document.getElementById('registrationForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-            document.getElementById('formContainer').style.display = 'none'; // Hide the form
-            document.getElementById('thankYouContainer').style.display = 'block'; // Show the thank you message
-            
-            // Here, submit the form using fetch to keep it on the same page
-            const formData = new FormData(this);
-            fetch(this.action, {
-                method: this.method,
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Handle successful submission
-                } else {
-                    // Handle errors
-                    alert("Error in submission.");
-                }
-            })
-            .catch(error => alert("Error in submission: " + error));
-        });
-
-        // Function to go back to the registration form
         function goBack() {
-            document.getElementById('thankYouContainer').style.display = 'none'; // Hide thank you message
-            document.getElementById('formContainer').style.display = 'block'; // Show the registration form again
-
-            // Clear all input fields
-            document.getElementById('registrationForm').reset();
+            document.getElementById('thank-you-message').style.display = 'none';
+            document.querySelector('.form-container').style.display = 'block';
+            document.forms['registration'].reset();
         }
     </script>
-
 </body>
 </html>
