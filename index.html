@@ -6,7 +6,7 @@
     <title>Soccer-Tennis Championship Registration</title>
     <style>
         body {
-            background-image: url('https://passionsoccer.ca/cdn/shop/products/16B7-kwik-goal-mini-soccer-tennis_1000x.jpg?v=1616440431your-soccer-background-image.jpg');
+            background-image: url('https://passionsoccer.ca/cdn/shop/products/16B7-kwik-goal-mini-soccer-tennis_1000x.jpg?v=1616440431your-soccer-background-image.jpg'); /* Replace with the URL of your background image */
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -18,7 +18,7 @@
         }
 
         .form-container {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
@@ -52,7 +52,7 @@
         button {
             width: 100%;
             padding: 10px;
-            background: #28a745;
+            background: #28a745; /* Green color */
             border: none;
             border-radius: 5px;
             color: #fff;
@@ -63,25 +63,14 @@
         }
 
         button:hover {
-            background: #218838;
-        }
-
-        .thank-you-container {
-            display: none;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
-            text-align: center;
-            max-width: 500px;
-            width: 100%;
+            background: #218838; /* Darker green on hover */
         }
     </style>
 </head>
 <body>
     <div class="form-container">
         <h1>Registration</h1>
-        <form name="registration" method="POST" data-netlify="true" onsubmit="showThankYou(event)">
+        <form name="registration" method="POST" action="/thank-you.html" data-netlify="true">
             <label for="team-name">Team Name:</label>
             <input type="text" id="team-name" name="team-name" required>
 
@@ -90,9 +79,6 @@
 
             <label for="player2-name">Player 2 Full Name:</label>
             <input type="text" id="player2-name" name="player2-name" required>
-
-            <label for="player3-name">Player 3 Full Name:</label>
-            <input type="text" id="player3-name" name="player3-name" required>
 
             <label for="email">Email Address:</label>
             <input type="email" id="email" name="email" required>
@@ -103,26 +89,5 @@
             <button type="submit">Register</button>
         </form>
     </div>
-
-    <div class="thank-you-container" id="thank-you-message">
-        <h1>Thank You!</h1>
-        <p>Your registration has been received successfully.</p>
-        <p>We appreciate your participation in the Soccer-Tennis Championship!</p>
-        <button onclick="goBack()">Go Back</button>
-    </div>
-
-    <script>
-        function showThankYou(event) {
-            event.preventDefault();
-            document.querySelector('.form-container').style.display = 'none';
-            document.getElementById('thank-you-message').style.display = 'block';
-        }
-
-        function goBack() {
-            document.getElementById('thank-you-message').style.display = 'none';
-            document.querySelector('.form-container').style.display = 'block';
-            document.forms['registration'].reset();
-        }
-    </script>
 </body>
 </html>
