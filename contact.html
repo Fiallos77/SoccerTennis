@@ -6,7 +6,7 @@
 <meta name="description" content="Venta de Cevichochos - sitio web académico multi página hecho por un estudiante de IT." />
 <link rel="stylesheet" href="css/styles.css" />
 <script defer src="js/main.js"></script>
-<title>Cevichochos+ | Inicio</title>
+<title>Cevichochos+ | Contacto</title>
 </head>
 <body>
 <header class="site-header">
@@ -26,22 +26,23 @@
   </div>
 </header>
 <main class="container">
-  <section class="hero centered"><div class="badge">Proyecto de Principiante</div>
-    <h1>Cevichochos+ 🍋</h1>
-    <p class="lead">Sabor tradicional andino con toque moderno. Venta responsable y presentación clara — trabajo académico.</p>
-    <a class="btn" href="benefits.html">Ver beneficios</a>
-  </section>
-
-  <section class="grid two">
-    <div class="card centered">
-      <h2>¿Qué vendemos?</h2>
-      <p>Cevichochos preparados con chochos, tomate, cebolla morada, limón, chifle y salsas. Opción vegana y sin gluten.</p>
+  <h1 class="centered">Contacto</h1>
+  <p class="centered">Este formulario es demostrativo (académico). No envía datos reales.</p>
+  <form class="card form" id="contactForm" novalidate>
+    <div class="form-row">
+      <label for="name">Nombre</label>
+      <input type="text" id="name" name="name" required placeholder="Tu nombre" />
     </div>
-    <div class="card centered">
-      <h2>¿Por qué este sitio?</h2>
-      <p>Es un proyecto de estudiante que recién aprende desarrollo web. Contiene 5 páginas, CSS, JavaScript y estructura organizada.</p>
+    <div class="form-row">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com" />
     </div>
-  </section>
+    <div class="form-row">
+      <label for="message">Mensaje</label>
+      <textarea id="message" name="message" required rows="4" placeholder="¿Qué necesitas?"></textarea>
+    </div>
+    <button class="btn" type="submit">Enviar</button>
+  </form>
 </main>
 <footer class="site-footer">
   <div class="container">
