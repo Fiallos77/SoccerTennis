@@ -6,7 +6,7 @@ Estructura:
   - /js/main.js
   - /images/ (coloca tus imágenes reales aquí)
 
-Cómo abrir:
+Cómo abrir:22
   1) Descarga y descomprime la carpeta.
   2) Abre 'index.html' en tu navegador.
 
